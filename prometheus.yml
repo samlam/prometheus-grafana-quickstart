@@ -13,9 +13,11 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['grafana:3000']
-  - job_name: 'wmi-exporter'
-    scrape_interval:  5s
+  - job_name: 'web'
+    scrape_interval: 5s
     static_configs:
-      - targets: ['192.168.0.84:9182']
-
-
+      - targets: ['host.docker.internal:82']
+  # - job_name: 'wmi-exporter'
+  #   scrape_interval:  5s
+  #   static_configs:
+  #     - targets: ['192.168.0.84:9182']

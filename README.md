@@ -1,6 +1,6 @@
-Work-in-progress
+## Work-in-progress
 
-manual run
+### manual run
 
 ```bash
 docker pull prom/prometheus
@@ -13,16 +13,16 @@ docker run -it -d --name prometheus -p 9090:9090 -v ./:/etc/prometheus prom/prom
 
 ```
 
-simple run
+### simple run
 
 ```bash
 docker run --name prometheus -p 127.0.0.1:9090:9090 prom/prometheus
 
 ```
 
-compose everything
+### compose everything
 
-```
+```sh
 docker-compose up
 ```
 

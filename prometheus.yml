@@ -17,7 +17,20 @@ scrape_configs:
     scrape_interval: 30s
     scrape_timeout: 20s
     static_configs:
-      - targets: ['host.docker.internal:82','LN01WEBNTSM501:80','LN01WEBNTSM502:80','LN04WEBNTSM501:80','LN04WEBNTSM502:80','LN01WEBNTSM601:80','LN01WEBNTSM602:80','LN04WEBNTSM601:80','LN04WEBNTSM602:80']
+      - targets: [
+        'host.docker.internal:82']
+  - job_name: pushgateway
+    honor_timestamps: true
+    scrape_interval: 6s
+    scrape_timeout: 5s
+    metrics_path: /prom-pushgateway/metrics
+    scheme: https
+    static_configs:
+    - targets:
+      - ln-services.dvm.costar.com
+      labels:
+        environment: DVM
+        vertical: LN
   # - job_name: 'wmi-exporter'
   #   scrape_interval:  5s
   #   static_configs:
